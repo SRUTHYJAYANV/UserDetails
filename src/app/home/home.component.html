@@ -1,0 +1,38 @@
+
+<h2 style ="padding-left: 20px;">Users</h2>
+<mat-table [dataSource]="storedUserDetails">
+    <!-- User name Definition -->
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.user.gender}} </mat-cell>
+    </ng-container>
+  
+    <!-- Age Definition -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.user.name.title}} {{row.user.name.first}} {{row.user.name.last}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.user.email}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.user.username}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="password">
+        <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.user.password}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dob">
+        <mat-header-cell *matHeaderCellDef> DOB </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.user.dob}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.user.phone}} </mat-cell>
+      </ng-container>
+    <!-- Header and Row Declarations -->
+    <mat-header-row *matHeaderRowDef="['gender', 'name', 'email','username','password','dob','phone']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['gender', 'name', 'email','username','password','dob','phone']"></mat-row>
+  </mat-table>

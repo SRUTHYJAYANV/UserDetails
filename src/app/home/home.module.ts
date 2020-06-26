@@ -1,0 +1,14 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home.component';
+import { MatTableModule } from '@angular/material'
+
+
+@NgModule({
+  declarations: [HomeComponent],
+  imports: [
+    CommonModule,
+    MatTableModule
+  ]
+})
+export class HomeModule { }
