@@ -10,7 +10,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    debugger;
     this.storedUserDetails = JSON.parse(localStorage.getItem('userDetails'))["results"];
   }
 

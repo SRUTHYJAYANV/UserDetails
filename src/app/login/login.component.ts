@@ -12,22 +12,14 @@ import { AuthenticationService } from '../common/authentication.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   public userDetails: any;
-  // loading = false;
-  // submitted = false;
-  // returnUrl: string;
   public error = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     private httpClient: HttpClient,
     private authenticationService: AuthenticationService
   ) {
-    // redirect to home if already logged in
-    // if (this.authenticationService.currentUserValue) {
-    //   this.router.navigate(['/']);
-    // }
   }
 
   ngOnInit() {
@@ -53,16 +45,9 @@ export class LoginComponent implements OnInit {
 
   //on the submit of the form
   onSubmit(event: NgForm) {
-    debugger;
-    // this.submitted = true;
-
-    // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
-
-    // this.loading = true;
-    debugger;
     let result = this.authenticationService.login(event.value.username, event.value.password);
     if (result) {
       this.error = ''
